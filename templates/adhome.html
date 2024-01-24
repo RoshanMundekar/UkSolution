@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ADMIN HOME</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="../static/css/style.css">
+   <!-- Document Title -->
+   <script src="../static/js/jquery-3.3.1.js"></script>
+
+</head>
+
+<body>
+
+   <header class="header">
+
+      <section class="flex">
+
+         <a href="/adhome" class="logo">FirstStepUK Admin</a>
+
+
+
+         <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <div id="search-btn" class="fas fa-search"></div>
+            <div id="user-btn" class="fas fa-user"></div>
+            <div id="toggle-btn" class="fas fa-sun"></div>
+         </div>
+
+        
+
+      </section>
+
+   </header>
+
+   <div class="side-bar">
+
+      <div id="close-btn">
+         <i class="fas fa-times"></i>
+      </div>
+
+      <div class="profile">
+         <img src="../static/images/adlo.png" class="image" alt="">
+         <h3 class="name">FirstStepUK Admin</h3>
+         <nav class="navbar">
+            
+            
+            <a href="/"><i class="fas fa-headset"></i><span>LOGOUT</span></a>
+         </nav>
+
+      </div>
+
+
+
+
+   </div>
+
+   <section class="contact">
+
+      <div class="row">
+
+         <div class="image">
+            <form id="myForm" enctype="multipart/form-data">
+               <h3>step by step information about these formalities.
+               </h3>
+               
+               <input type="text" placeholder="Enter your title name" name="name" required maxlength="50" class="box" required>
+               <input type="email" placeholder="Enter your Person Emailid" name="email" required maxlength="50"
+                  class="box" required>
+               <input type="number" placeholder="Enter your  Person contact" name="number" required maxlength="50"
+                  class="box" required>
+               <textarea name="msg" class="box" placeholder="enter your message" required maxlength="1000" cols="30"
+                  rows="10"></textarea>
+
+               <input type="file"  name="file" id="file" required class="box">
+               <input value="SAVE" id="btnSubmit" class="inline-btn">
+            </form>
+         </div>
+
+         <script>
+            document.getElementById('btnSubmit').addEventListener('click', function () {
+               var form = document.getElementById('myForm');
+               var emailInput = document.getElementById('email');
+               var numberInput = document.getElementById('number');
+
+               
+         
+
+               var formData = new FormData(form);
+
+               fetch('/submit_form', {
+                  method: 'POST',
+                  body: formData
+               })
+                  .then(response => response.json())
+                  .then(data => {
+                     alert(data.message);
+                     window.location.href = '/adhome';
+
+                  })
+                  .catch(error => {
+                     console.error('Error:', error);
+                  });
+            });
+         </script>
+
+
+
+
+         <form id="myForm1" enctype="multipart/form-data">
+            <h3>also refer some youtube videos </h3>
+            <div>
+               <p>upload  image</p>
+               <input type="file"  name="file2" id="file2" required class="box">
+
+               <input type="text" placeholder="Enter Title name" name="name1" required maxlength="50" class="box">
+               <select name="dropdown1" class="box">
+                  <option value="" selected disabled hidden>Choose an option</option>
+                  {% for i in data %}
+                  <option value="{{i[0]}}">{{i[1]}}</option>
+                  {% endfor %}
+
+               </select>
+            </div>
+
+            <textarea name="msg1" class="box" placeholder="enter your message" required maxlength="1000" cols="30"
+               rows="10"></textarea>
+
+               <p>upload  Video</p>
+               <input type="file"  name="file1" id="file1" required class="box">
+            <input value="SUBMIT" id="btnSubmit1" class="inline-btn">
+         </form>
+
+
+         <script>
+            document.getElementById('btnSubmit1').addEventListener('click', function () {
+               var form = document.getElementById('myForm1');
+            
+
+               var formData = new FormData(form);
+
+               fetch('/submit_form1', {
+                  method: 'POST',
+                  body: formData
+               })
+                  .then(response => response.json())
+                  .then(data => {
+                     alert(data.message);
+                     window.location.href = '/adhome';
+
+                  })
+                  .catch(error => {
+                     console.error('Error:', error);
+                  });
+            });
+         </script>
+
+
+
+      </div>
+
+
+
+   </section>
+
+
+
+
+
+
+
+
+
+   <footer class="footer">
+
+      &copy; copyright @ 2023 by <span>mr.RJ</span> | all rights reserved!
+
+   </footer>
+
+   <!-- custom js file link  -->
+   <!-- <script src="../static/js/scrispt.js"></script> -->
+
+
+</body>
+
+</html>

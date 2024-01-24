@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>FirstStepUK</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="../static/css/style.css">
+
+</head>
+<body>
+
+<header class="header">
+   
+   <section class="flex">
+
+      <a href="/home" class="logo">FirstStepUK</a>
+
+      <form action="search.html" method="post" class="search-form">
+         <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
+      </form>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+
+      <div class="profile">
+         <img src="../{{image}}" class="image" alt="">
+         <h3 class="name">{{email}}</h3>
+        
+         <a href="/logout" class="btn">Logout</a>
+        
+      </div>
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="../{{image}}" class="image" alt="">
+      <h3 class="name">{{username}}</h3>
+      <p class="role">{{email}}</p>
+      <a href="/profile" class="btn">view profile</a>
+   </div>
+
+   <nav class="navbar">
+      <a href="/home"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="/courses"><i class="fas fa-graduation-cap"></i><span>Steps follow</span></a>
+
+      <a href="/logout"><i class="fas fa-headset"></i><span>Logout</span></a>
+   </nav>
+
+</div>
+
+
+
+
+<section class="courses">
+
+   <h1 class="heading">Important things to do after you arrive in the UK to study</h1>
+
+   <div class="box-container">
+
+      <div class="box">
+         
+         <div class="thumb">
+            <img src="../static/images/6.jpg" alt="">
+           
+         </div>
+         <h3 class="title">Arrival in the UK</h3>
+         <a href="/teachers" class="inline-btn">Click Here</a>
+      </div>
+
+      <div class="box">
+        
+         <div class="thumb">
+            <img src="../static/images/4.jfif" alt="">
+           
+         </div>
+         <h3 class="title">BR Collection</h3>
+         <a href="/teachers1" class="inline-btn">Click Here</a>
+      </div>
+
+      <div class="box">
+        
+         <div class="thumb">
+            <img src="../static/images/b.jfif" alt="">
+          
+         </div>
+         <h3 class="title">Bank Account</h3>
+         <a href="/teachers2" class="inline-btn">Click Here</a>
+      </div>
+
+      <div class="box">
+        
+         <div class="thumb">
+            <img src="../static/images/ni.png" alt="">
+           
+         </div>
+         <h3 class="title">National Insurance (NI) Number</h3>
+         <a href="/teachers3" class="inline-btn">Click Here</a>
+      </div>
+
+      <div class="box">
+        
+         <div class="thumb">
+            <img src="../static/images/gp.jfif" alt="">
+           
+         </div>
+         <h3 class="title">General Practitioner Registration</h3>
+         <a href="/teachers4" class="inline-btn">Click Here</a>
+      </div>
+
+     
+
+   </div>
+
+  
+
+</section>
+
+
+
+
+
+
+<section class="home-grid">
+
+   <h1 class="heading">Arrival in the UK</h1>
+
+   <div class="box-container">
+
+     
+      <div class="box">
+         <h3 class="title">BR Collection</h3>
+         <p class="tutor">If by "BR," you mean Biometric Residence Permit (BRP), you should collect it within 10 days of your arrival. This is usually at the post office mentioned in your visa application</p>
+
+      </div>
+      <div class="box">
+         <h3 class="title">Bank Account</h3>
+         <p class="tutor">Open a bank account for your stay. Visit a local bank branch with the required identification documents, proof of address, and your BRP.</p>
+
+      </div>
+
+      
+      <div class="box">
+         <h3 class="title">National Insurance Number (Ni Number)</h3>
+         <p class="tutor">Apply for a National Insurance Number if you plan to work in the UK. You can usually do this by calling the National Insurance number application line</p>
+
+      </div>
+
+     
+
+     
+      <div class="box">
+         <h3 class="title">Register with GP (General Practitioner)</h3>
+         <p class="tutor">Find a local GP (doctor) and register as soon as possible. You'll need proof of address and your BRP. This ensures you have access to healthcare services.</p>
+      </div>
+
+   </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+   &copy; copyright @ 2023 by <span>mr.RJ</span> | all rights reserved!
+
+</footer>
+
+<!-- custom js file link  -->
+<script src="../static/js/script.js"></script>
+
+   
+</body>
+</html>

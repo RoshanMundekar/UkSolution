@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>adlogin</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="../static/css/style.css">
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Document Title -->
+    <script src="../static/js/jquery-3.3.1.js"></script>
+
+</head>
+<body>
+
+<header class="header">
+   
+   <section class="flex">
+
+      <a href="/" class="logo">FirstStepUK Admin</a>
+
+     
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+        
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+
+    
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="../static/images/log2.jpg" class="image" alt="">
+      <h3 class="name">ADMIN</h3>
+     
+    
+   </div>
+
+   <nav class="navbar">
+      <a href="/"><i class="fas fa-home"></i><span>home</span></a>
+      <a href="/about"><i class="fas fa-question"></i><span>About</span></a>
+      
+      <a href="/contact"><i class="fas fa-headset"></i><span>contact us</span></a>
+   </nav>
+
+</div>
+
+<section class="form-container">
+
+   <form id="loginForm" enctype="multipart/form-data">
+      <h3>Admin Login Here</h3>
+      <p>Admin Username <span>*</span></p>
+      <input type="text" name="name" id="name"  placeholder="enter your Username" required maxlength="50" class="box">
+      <p>Admin password <span>*</span></p>
+      <input type="password"name="password" id="password" placeholder="enter your password" required maxlength="20" class="box">
+      <input value="login new" id="btnlogin1"  name="btnSubmit1" class="btn">
+   </form>
+
+</section>
+
+
+
+<script>
+   $('#btnlogin1').click(function () {
+      var name = $('#name').val()
+      var password = $('#password').val()
+
+      var customString = "admin";
+
+      if (name == customString && password == customString) {
+         var name = name;
+         var data = { name: name };
+         console.log(data);
+         $.ajax({
+            type: "POST",
+            url: "SessionHandle1",
+            data: data,
+            success: function (data) {
+               console.log(data);
+               window.location.replace("/adhome");
+               $("#btnlogin1").prop("disabled", false);
+            },
+            error: function (e) {
+               console.log("ERROR : ", e);
+               $("#btnlogin1").prop("disabled", false);
+            }
+         });
+      }
+      else {
+         alert("invalid username or password");
+         $("#btnlogin1").prop("disabled", false);
+
+      }
+   })
+</script>
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+   &copy; copyright @ 2023 by <span>mr.RJ</span> | all rights reserved!
+
+</footer>
+
+<!-- custom js file link  -->
+<!-- <script src="../static/js/script.js"></script> -->
+
+   
+</body>
+</html>

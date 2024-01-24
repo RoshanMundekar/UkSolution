@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>FirstStepUK</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="../static/css/style.css">
+
+</head>
+<body>
+
+<header class="header">
+   
+   <section class="flex">
+
+      <a href="/home" class="logo">FirstStepUK</a>
+
+      <form action="search.html" method="post" class="search-form">
+         <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
+      </form>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+
+      <div class="profile">
+         <img src="../{{image}}" class="image" alt="">
+         <h3 class="name">{{email}}</h3>
+        
+         <a href="/logout" class="btn">Logout</a>
+        
+      </div>
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="../{{image}}" class="image" alt="">
+      <h3 class="name">{{username}}</h3>
+      <p class="role">{{email}}</p>
+      <a href="/profile" class="btn">view profile</a>
+   </div>
+   <nav class="navbar">
+      <a href="/home"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="/courses"><i class="fas fa-graduation-cap"></i><span>Steps follow</span></a>
+    
+      <a href="/logout"><i class="fas fa-headset"></i><span>Logout</span></a>
+   </nav>
+</div>
+
+<section class="teachers">
+
+   <h1 class="heading">Collect your BRP once in the UK, typically within 10 days of arrival.</h1>
+
+  
+
+   <div class="box-container">
+
+      <div class="box offer">
+         <h3>Check BRP Requirement</h3>
+         <p>1.Confirm whether you need a Biometric Residence Permit (BRP) based on your visa type.</p>
+         <p>2.Some visas require the collection of a BRP, while others may not.</p>
+         <a href="https://digital.nhs.uk/services/guides/gp-registration" class="inline-btn">STEP-1</a>
+      </div>
+
+      <div class="box offer">
+         <h3>Receive Notification</h3>
+         <p>1.After arriving in the UK, you should receive a notification indicating whether you need to collect a BRP.</p>
+         <a href="https://www.gov.uk/apply-national-insurance-number" class="inline-btn">STEP-2</a>
+      </div>
+
+
+      <div class="box offer">
+         <h3>Visit Collection Poin</h3>
+         <p>1.Locate the designated collection point for your BRP, which is often a post office or a specific office mentioned in your visa approval letter.</p>
+         <a href="https://www.plymouth.ac.uk/international/important-things-to-do-after-you-arrive-in-the-uk-to-study" class="inline-btn">STEP-3</a>
+      </div>
+
+      <div class="box offer">
+         <h3>Bring Necessary Documents</h3>
+         <p>1.Bring your passport and any other documents specified in your visa approval letter.</p>
+         <a href="https://www.gre.ac.uk/visa/when-you-arrive/arriving-at-the-uk-border" class="inline-btn">STEP-4</a>
+      </div>
+
+
+      <div class="box offer">
+         <h3>Collect BRP</h3>
+         <p>1.Visit the designated collection point within the specified timeframe (usually within 10 days of arrival).</p>
+         <p>2.Present your passport and any required documents to collect your BRP.</p>
+         <a href="https://www.gov.uk/government/publications/student-arrivals-10-top-tips" class="inline-btn">STEP-5</a>
+      </div>
+
+
+      <div class="box offer">
+         <h3>Check Accuracy</h3>
+         <p>1.Verify the details on your BRP for accuracy, including your personal information and visa details.</p>
+         <a href="https://www.ukcisa.org.uk" class="inline-btn">STEP-6</a>
+      </div>
+
+      <div class="box offer">
+         <h3>Contact Authorities if Issues Arise</h3>
+         <p>1.If there are any discrepancies or issues with your BRP, contact the relevant immigration authorities promptly for resolution.</p>
+         <a href="https://www.internationalstudents.cam.ac.uk/student-visa-responsibilities/prior-and-arrival" class="inline-btn">STEP-7</a>
+      </div>
+
+
+      <div class="box offer">
+         <h3>Keep BRP Safe</h3>
+         <p>1.Safely store your BRP as it is a crucial document for proving your immigration status in the UK</p>
+         <a href="https://www.ukcisa.org.uk/information--advice/visas-and-immigration/immigration-on-arrival" class="inline-btn">STEP-8</a>
+      </div>
+    
+
+   </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+   &copy; copyright @ 2023 by <span>mr.RJ</span> | all rights reserved!
+
+</footer>
+
+<!-- custom js file link  -->
+<script src="../static/js/script.js"></script>
+
+   
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>FirstStepUK</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="../static/css/style.css">
+
+</head>
+<body>
+
+<header class="header">
+   
+   <section class="flex">
+
+      <a href="/home" class="logo">FirstStepUK</a>
+
+      <form action="search.html" method="post" class="search-form">
+         <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
+      </form>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+
+      <div class="profile">
+         <img src="../{{image}}" class="image" alt="">
+         <h3 class="name">{{email}}</h3>
+        
+         <a href="/logout" class="btn">Logout</a>
+        
+      </div>
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="../{{image}}" class="image" alt="">
+      <h3 class="name">{{username}}</h3>
+      <p class="role">{{email}}</p>
+      <a href="/profile" class="btn">view profile</a>
+   </div>
+   <nav class="navbar">
+      <a href="/home"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="/courses"><i class="fas fa-graduation-cap"></i><span>Steps follow</span></a>
+      
+      <a href="/logout"><i class="fas fa-headset"></i><span>Logout</span></a>
+   </nav>
+
+</div>
+
+<section class="courses">
+
+   <h1 class="heading">You can also refer some youtube videos </h1>
+
+   <div class="box-container">
+      {% for i in data %}
+      <div class="box">
+         <div class="tutor">
+          
+            <div class="info">
+               <h3>{{i[2]}}</h3>
+               <span>{{i[3]}}</span>
+            </div>
+         </div>
+         <div class="thumb">
+            <img src="../{{i[5]}}" alt="">
+            
+         </div>
+         <h3 class="title">{{i[1]}}</h3>
+         <a href="/playlist/{{i[0]}}" class="inline-btn">view playlist</a>
+      </div>
+      {% endfor %}
+
+      
+
+     
+
+    
+     
+
+   </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+   &copy; copyright @ 2023 by <span>mr.RJ</span> | all rights reserved!
+
+</footer>
+
+<!-- custom js file link  -->
+<script src="../static/js/script.js"></script>
+
+   
+</body>
+</html>

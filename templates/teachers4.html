@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>FirstStepUK</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="../static/css/style.css">
+
+</head>
+<body>
+
+<header class="header">
+   
+   <section class="flex">
+
+      <a href="/home" class="logo">FirstStepUK</a>
+
+      <form action="search.html" method="post" class="search-form">
+         <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
+      </form>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+
+      <div class="profile">
+         <img src="../{{image}}" class="image" alt="">
+         <h3 class="name">{{email}}</h3>
+        
+         <a href="/logout" class="btn">Logout</a>
+        
+      </div>
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="../{{image}}" class="image" alt="">
+      <h3 class="name">{{username}}</h3>
+      <p class="role">{{email}}</p>
+      <a href="/profile" class="btn">view profile</a>
+   </div>
+   <nav class="navbar">
+      <a href="/home"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="/courses"><i class="fas fa-graduation-cap"></i><span>Steps follow</span></a>
+    
+      <a href="/logout"><i class="fas fa-headset"></i><span>Logout</span></a>
+   </nav>
+</div>
+
+<section class="teachers">
+
+   <h1 class="heading">General Practitioner (GP) Registration</h1>
+
+ 
+   <div class="box-container">
+
+      <div class="box offer">
+         <h3>Locate a Local GP Clinic</h3>
+         <p>1.Research nearby GP clinics using online directories or recommendations.</p>
+         <p>2.Choose a clinic that is convenient for you in terms of location and operating hours.</p>
+         <a href="https://digital.nhs.uk/services/guides/gp-registration" class="inline-btn">STEP-1</a>
+      </div>
+
+      <div class="box offer">
+         <h3>Register with a GP</h3>
+         <p>1.Contact the chosen GP clinic to inquire about their registration process.</p>
+
+         <p>2.Schedule an appointment for registration, if required..</p>
+         <p>3.Complete the necessary registration forms provided by the clinic.</p>
+         <a href="https://www.gov.uk/apply-national-insurance-number" class="inline-btn">STEP-2</a>
+      </div>
+
+
+      <div class="box offer">
+         <h3>Provide Necessary Identification and Proof of Address</h3>
+         <p>1.Bring valid identification documents such as passport, national ID, or driving license.</p>
+         <p>2.Provide proof of address, which can include a utility bill or a bank statement with your current address.</p>
+         <p>3.If you're an international student, also bring documentation related to your visa status.</p>
+         <a href="https://www.plymouth.ac.uk/international/important-things-to-do-after-you-arrive-in-the-uk-to-study" class="inline-btn">STEP-3</a>
+      </div>
+
+      <div class="box offer">
+         <h3>Attend the Registration Appointment:</h3>
+         <p>1.Attend the scheduled registration appointment at the GP clinic.</p>
+         <p>2.Submit the completed registration forms along with your identification and proof of address.</p>
+         <a href="https://www.gre.ac.uk/visa/when-you-arrive/arriving-at-the-uk-border" class="inline-btn">STEP-4</a>
+      </div>
+
+
+      <div class="box offer">
+         <h3>Receive Confirmation and Access Services</h3>
+         <p>1.Once registered, you should receive confirmation of your registration.</p>
+         <p>2.You can then access healthcare services provided by the GP clinic.</p>
+         <a href="https://www.gov.uk/government/publications/student-arrivals-10-top-tips" class="inline-btn">STEP-5</a>
+      </div>
+
+
+      
+   </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+   &copy; copyright @ 2023 by <span>mr.RJ</span> | all rights reserved!
+
+</footer>
+
+<!-- custom js file link  -->
+<script src="../static/js/script.js"></script>
+
+   
+</body>
+</html>

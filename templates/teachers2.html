@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>FirstStepUK</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="../static/css/style.css">
+
+</head>
+<body>
+
+<header class="header">
+   
+   <section class="flex">
+
+      <a href="/home" class="logo">FirstStepUK</a>
+
+      <form action="search.html" method="post" class="search-form">
+         <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
+      </form>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+
+      <div class="profile">
+         <img src="../{{image}}" class="image" alt="">
+         <h3 class="name">{{email}}</h3>
+        
+         <a href="/logout" class="btn">Logout</a>
+        
+      </div>
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="../{{image}}" class="image" alt="">
+      <h3 class="name">{{username}}</h3>
+      <p class="role">{{email}}</p>
+      <a href="/profile" class="btn">view profile</a>
+   </div>
+   <nav class="navbar">
+      <a href="/home"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="/courses"><i class="fas fa-graduation-cap"></i><span>Steps follow</span></a>
+    
+      <a href="/logout"><i class="fas fa-headset"></i><span>Logout</span></a>
+   </nav>
+</div>
+
+<section class="teachers">
+
+   <h1 class="heading">Bank Account</h1>
+
+ 
+
+   <div class="box-container">
+
+      <div class="box offer">
+         <h3>Research and Choose a Suitable Bank</h3>
+         <p>1.Explore different banks and compare their student account offerings.</p>
+         <p>2.Consider factors such as fees, overdraft options, online services, and branch accessibility.</p>
+         <a href="https://digital.nhs.uk/services/guides/gp-registration" class="inline-btn">STEP-1</a>
+      </div>
+
+      <div class="box offer">
+         <h3>Visit the Bank in Person with Necessary Identification Documents</h3>
+         <p>1.Passport or national ID.</p>
+         <p>2.Proof of address (e.g., utility bill or rental agreement)</p>
+         <p>3.Letter of acceptance from your educational institution</p>
+         <p>4.Confirmation of student status (if applicable)</p>
+         <a href="https://www.gov.uk/apply-national-insurance-number" class="inline-btn">STEP-2</a>
+      </div>
+
+
+      <div class="box offer">
+         <h3>Open a Student Bank Account</h3>
+
+         <p>1.Schedule an appointment or visit the bank during their operating hours.</p>
+         <p>2.Present your identification documents to the bank representative.</p>
+         <p>3.Complete the necessary application forms provided by the bank.</p>
+         <p>4.Provide any additional information required, such as your course details and expected graduation date.</p>
+         <p>5.Discuss and choose any optional features, like overdraft facilities.</p>
+         <p>6.Receive your new student bank account details, including account number and sort code.</p>
+         <a href="https://www.plymouth.ac.uk/international/important-things-to-do-after-you-arrive-in-the-uk-to-study" class="inline-btn">STEP-3</a>
+      </div>
+
+      
+
+
+   </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+   &copy; copyright @ 2023 by <span>mr.RJ</span> | all rights reserved!
+
+</footer>
+
+<!-- custom js file link  -->
+<script src="../static/js/script.js"></script>
+
+   
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>register</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="../static/css/style.css">
+
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <!-- Document Title -->
+   <script src="../static/js/jquery-3.3.1.js"></script>
+
+</head>
+<body>
+
+<header class="header">
+   
+   <section class="flex">
+
+      <a href="/" class="logo">FirstStepUK</a>
+
+      <form action="search.html" method="post" class="search-form">
+         <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
+      </form>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+
+      <div class="profile">
+         <img src="../static/images/log2.jpg" class="image" alt="">
+         <h3 class="name">FirstStepUK</h3>
+         
+         
+         <div class="flex-btn">
+            <a href="/login" class="option-btn">login</a>
+            <a href="/register" class="option-btn">register</a>
+         </div>
+      </div>
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="../static/images/log2.jpg" class="image" alt="">
+      <h3 class="name">FirstStepUK</h3>
+     
+    
+   </div>
+
+   <nav class="navbar">
+      <a href="/"><i class="fas fa-home"></i><span>home</span></a>
+      <a href="/about"><i class="fas fa-question"></i><span>About</span></a>
+      <!-- <a href="/courses"><i class="fas fa-graduation-cap"></i><span>Teacher Login</span></a>
+      <a href="/teachers"><i class="fas fa-chalkboard-user"></i><span>teachers Register</span></a> -->
+      <a href="/contact"><i class="fas fa-headset"></i><span>contact us</span></a>
+   </nav>
+
+   
+
+</div>
+
+<section class="form-container">
+
+   <form id="fileUploadForm" enctype="multipart/form-data">
+      <h3>register now</h3>
+      <p>your name <span>*</span></p>
+      <input type="text" name="name"  id="name"  placeholder="enter your name" required maxlength="50" class="box">
+      <p>your email <span>*</span></p>
+      <input type="email" name="email"  id="email" placeholder="enter your email" required maxlength="50" class="box">
+      <p>your Conatct <span>*</span></p>
+      <input type="number" name="mobile"   id="mobile" placeholder="enter your contact No" required maxlength="50" class="box">
+      <p>your password <span>*</span></p>
+      <input type="password" name="password" id="password"  placeholder="enter your password" required maxlength="20" class="box">
+      <p>Your City Name <span>*</span></p>
+      <input type="text" name="City" id="City" placeholder="enter your CityName"  required maxlength="50" class="box">
+      <p>Your Currrent Address <span>*</span></p>
+      <input type="text" name="Address"  id="Address" placeholder="enter your Address" required maxlength="350" class="box">
+      <p>select profile <span>*</span></p>
+      <input type="file" accept="image/*"  name="file"  id="file" required class="box">
+      <input id="btnSubmit" value="register new" name="submit" class="btn">
+   </form>
+
+</section>
+
+
+
+
+<script>
+   $(document).ready(function () {
+
+       $("#btnSubmit").click(function (event) {
+           event.preventDefault();
+           var Username = $('#name').val().toString();
+           var email = $('#email').val().toString();
+           var Password = $('#password').val().toString();
+           var mobile = $('#mobile').val().toString();
+           var City = $('#City').val().toString();
+           var Address = $('#Address').val().toString();
+           var file = $('#file').val().toString();
+
+
+
+           var pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+           var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+           if (Username == "" || Password == "" || email == "" || mobile == "" || file == "" || Address == "") {
+               alert("Please enter details !")
+
+           }
+           else if (!filter.test(document.getElementById('email').value)) {
+               alert("Please enter valid email address !");
+
+           }
+           else if (!$('#mobile').val().match('[0-9]{10}') || document.getElementById('mobile').value.length != 10) {
+               alert("Enter a 10-digit mobile number.!");
+
+           }
+          
+           else if (!pattern.test(document.getElementById('password').value)) {
+               alert("Password must contain at least 8 characters.!");
+
+           }
+           else {
+               var form = $('#fileUploadForm')[0];
+               var data = new FormData(form);
+
+               $.ajax({
+                   type: 'POST',
+                   url: "get_otp", // Replace with your Flask URL to fetch OTP
+                   data: data,
+                   processData: false,
+                   contentType: false,
+                   cache: false,
+                   timeout: 600000,
+                   success: function (response) {
+                       console.log(response.otp);
+                       if (response.success) {
+                           Swal.fire({
+                               title: 'Enter OTP',
+                               input: 'text',
+                               inputPlaceholder: 'Enter OTP',
+                               showCancelButton: true,
+                               confirmButtonText: 'Verify',
+                               showLoaderOnConfirm: true,
+                               preConfirm: (otp) => {
+                                   console.log(otp);
+                                   // Send OTP to backend for verification
+                                   return $.ajax({
+                                       type: 'POST',
+                                       url: "verify_otp", // Replace with your Flask URL to verify OTP
+                                       data: { otp: otp, otp1: response.otp },
+                                       dataType: 'json',
+                                   });
+                               },
+                               allowOutsideClick: () => !Swal.isLoading()
+                           }).then((result) => {
+                               if (result.value && result.value.success) {
+                                   // Verification successful, call AJAX POST method
+                                   $.ajax({
+                                       type: 'POST',
+                                       enctype: 'multipart/form-data',
+                                       url: "register1",
+                                       data: data,
+                                       processData: false,
+                                       contentType: false,
+                                       cache: false,
+                                       timeout: 600000,
+                                       success: function (response) {
+
+                                           document.getElementById('name').value = ''
+                                           document.getElementById('email').value = ''
+                                           document.getElementById('password').value = ''
+                                           document.getElementById('mobile').value = ''
+                                           document.getElementById('City').value = ''
+                                           document.getElementById('Address').value = ''
+                                           document.getElementById('file').value = ''
+
+                                         
+
+                                           // Handle success response
+                                           Swal.fire({
+                                               title: 'Success!',
+                                               text: response.message,
+                                               icon: 'success',
+                                               confirmButtonText: 'Okay'
+                                           });
+                                       },
+                                       error: function (e) {
+                                           console.log("ERROR : ", e);
+                                       }
+                                   });
+                               } else {
+                                   // Verification failed, show error Swal
+                                   Swal.fire({
+                                       title: 'Error',
+                                       text: 'Invalid OTP. Registration failed.',
+                                       icon: 'error',
+                                       confirmButtonText: 'Okay'
+                                   });
+                               }
+                           });
+                       } else {
+                           console.log("Error fetching OTP");
+                       }
+                   },
+                   error: function (e) {
+                       console.log("ERROR: ", e);
+                       $("#btnSubmit").prop("disabled", false);
+                   }
+               });
+           }
+       });
+   });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+    &copy; copyright @ 2023 by <span>mr.RJ</span> | all rights reserved!
+
+</footer>
+
+<!-- custom js file link  -->
+<script src="../static/js/script.js"></script>
+
+   
+</body>
+</html>

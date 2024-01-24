@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>FirstStepUK</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="../static/css/style.css">
+
+</head>
+<body>
+
+<header class="header">
+   
+   <section class="flex">
+
+      <a href="/home" class="logo">FirstStepUK</a>
+
+      <form action="search.html" method="post" class="search-form">
+         <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
+      </form>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+
+      <div class="profile">
+         <img src="../{{image}}" class="image" alt="">
+         <h3 class="name">{{email}}</h3>
+        
+         <a href="/logout" class="btn">Logout</a>
+        
+      </div>
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="../{{image}}" class="image" alt="">
+      <h3 class="name">{{username}}</h3>
+      <p class="role">{{email}}</p>
+      <a href="/profile" class="btn">view profile</a>
+   </div>
+   <nav class="navbar">
+      <a href="/home"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="/courses"><i class="fas fa-graduation-cap"></i><span>Steps follow</span></a>
+    
+      <a href="/logout"><i class="fas fa-headset"></i><span>Logout</span></a>
+   </nav>
+</div>
+
+<section class="teachers">
+
+   <h1 class="heading">National Insurance (NI) Number</h1>
+
+ 
+
+   <div class="box-container">
+
+      <div class="box offer">
+         <h3>Contact Jobcentre Plus</h3>
+         <p>1.Reach out to your local Jobcentre Plus office to request an NI number application form.</p>
+         <p>2.You can find the contact details on the official government website or by searching online.</p>
+         <a href="https://digital.nhs.uk/services/guides/gp-registration" class="inline-btn">STEP-1</a>
+      </div>
+
+      <div class="box offer">
+         <h3>Receive Application Form</h3>
+         <p>1.Once you contact Jobcentre Plus, they will provide you with the necessary application form.</p>
+         <p>2.The form might be sent to you by mail or given to you in person, depending on the local procedures.</p>
+         <a href="https://www.gov.uk/apply-national-insurance-number" class="inline-btn">STEP-2</a>
+      </div>
+
+
+      <div class="box offer">
+         <h3>Complete the Application Form</h3>
+         <p>1.Fill out the application form with accurate and up-to-date information.</p>
+         <p>2.Provide the required documents and details, such as personal information, proof of identity, and proof of address..</p>
+         <a href="https://www.plymouth.ac.uk/international/important-things-to-do-after-you-arrive-in-the-uk-to-study" class="inline-btn">STEP-3</a>
+      </div>
+
+      <div class="box offer">
+         <h3>Attend the Interview (if required)</h3>
+         <p>1.In some cases, you may be required to attend an interview with Jobcentre Plus or the Department for Work and Pensions.</p>
+         
+         <p>2.During the interview, they may ask about your circumstances and reasons for needing an NI number.</p>
+         <a href="https://www.gre.ac.uk/visa/when-you-arrive/arriving-at-the-uk-border" class="inline-btn">STEP-4</a>
+      </div>
+
+
+      <div class="box offer">
+         <h3>Wait for the NI Number</h3>
+         <p>1.After submitting your application, you'll need to wait for the processing to be completed.</p>
+         <p>2.You will receive your NI number confirmation letter by mail, usually within a few weeks.</p>
+         <a href="https://www.gov.uk/government/publications/student-arrivals-10-top-tips" class="inline-btn">STEP-5</a>
+      </div>
+
+
+      <div class="box offer">
+         <h3>Keep Your NI Number Safe</h3>
+         <p>1.Once you receive your NI number, it's essential to keep it secure.</p>
+         <p>2.Memorize or store it in a safe place, as you will need it for employment, tax, and certain official transactions.</p>
+         <a href="https://www.ukcisa.org.uk" class="inline-btn">STEP-6</a>
+      </div>
+
+      
+
+   </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+   &copy; copyright @ 2023 by <span>mr.RJ</span> | all rights reserved!
+
+</footer>
+
+<!-- custom js file link  -->
+<script src="../static/js/script.js"></script>
+
+   
+</body>
+</html>
